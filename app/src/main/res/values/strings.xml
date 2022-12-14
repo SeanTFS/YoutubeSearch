@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">YoutubeSearch</string>
+    <string name="titleText">Title</string>
+    <string name="channelText">Channel</string>
+    <string name="viewText">Views</string>
+    <string name="uploadedText">uploaded_at</string>
+    <string name="durationText">Duration</string>
+    <string name="descriptionText">Description</string>
+    <string name="thumnailDes">Thumbnail Image</string>
+</resources>
