@@ -17,8 +17,8 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 public class VideoRecyclerViewAdapter extends RecyclerView.Adapter<VideoRecyclerViewAdapter.ViewHolder> {
-    private Context context;
-    private List<Video> videoList;
+    private final Context context;
+    private final List<Video> videoList;
     //constructeur de la classe
     public VideoRecyclerViewAdapter(Context context, List<Video> video){
         this.context=context;

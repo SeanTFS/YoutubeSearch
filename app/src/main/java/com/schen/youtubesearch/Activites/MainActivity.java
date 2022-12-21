@@ -55,18 +55,18 @@ public class MainActivity extends AppCompatActivity {
     public List<Video> getVideos(String searchTerm)
     {
         videoList.clear();
-        String myUrl = "https://youtube-search-results.p.rapidapi.com/youtube-search/?q="+searchTerm;
+        String myUrl = "https://youtube-search-results.p.rapidapi.com/youtube-search/?q="+searchTerm+"&rapidapi-key=940376fbf4msh2d7a502008fb4d0p1e7454jsna99c1293a39b";
         JsonObjectRequest jsonObjectRequest=new JsonObjectRequest(myUrl, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response)
             {
                 try {
                     JSONArray videoArray=response.getJSONArray("items");
-                    Log.d("videoresult","vid"+videoArray.toString());
-                    /*for (int i = 0; i < videoArray.length(); i++)
+                    Log.d("videoresult","vid"+ videoArray);
+                    for (int i = 0; i < videoArray.length(); i++)
                     {
                         JSONObject videoObj=videoArray.getJSONObject(i);
-
+                        Log.d("video","vid"+ videoObj.toString());
                         //the thumbnail url is a property of best thumbnail
                         //therefore, we have to get the object bestThumbnail in order to get the url
                         JSONObject thumbnailObj = videoObj.getJSONObject("bestThumbnail");
@@ -75,19 +75,27 @@ public class MainActivity extends AppCompatActivity {
                         //if (videoObj.getString("type").equals("video"))
                         //{
                             Video video = new Video();
+                            Log.d("videoTitle","vid"+ videoObj.getString("title"));
                             video.setTitle(videoObj.getString("title"));
+                            Log.d("videoDescription","vid"+ videoObj.getString("description"));
                             video.setDescription(videoObj.getString("description"));
+                            Log.d("videoDuration","vid"+ videoObj.getString("duration"));
                             video.setDuration(videoObj.getString("duration"));
+                            Log.d("videoViews","vid"+ videoObj.getString("views"));
                             video.setViews(videoObj.getString("views"));
-                            video.setUploaded_at(videoObj.getString("uploaded_at"));
+                            Log.d("videoDate","vid"+ videoObj.getString("uploadedAt"));
+                            video.setUploaded_at(videoObj.getString("uploadedAt"));
 
+                            Log.d("videoThumbnail","vid"+ thumbnailObj.getString("url"));
                             video.setThumbnail(thumbnailObj.getString("url"));
+                            Log.d("videoThumbnail","vid"+ authorObj.getString("name"));
                             video.setAuthor(authorObj.getString("name"));
 
                             videoList.add(video);
+                            Log.d("videoArray","vid"+ videoList.toString());
                         //}
                     }
-                    videoRecyclerViewAdapter.notifyDataSetChanged();*/
+                    videoRecyclerViewAdapter.notifyDataSetChanged();
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -99,14 +107,14 @@ public class MainActivity extends AppCompatActivity {
             }
         })
         {
-            @Override
+            /*@Override
             public Map<String, String> getHeaders() throws AuthFailureError
             {
                    Map<String, String> params=new HashMap<>();
                    params.put("X-RapidAPI-Host","youtube-search-results.p.rapidapi.com");
                    params.put("X-RapidAPI-Key","940376fbf4msh2d7a502008fb4d0p1e7454jsna99c1293a39b");
                    return params;
-            }
+            }*/
         };
         requestQueue.add(jsonObjectRequest);
         return videoList;
