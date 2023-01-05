@@ -27,7 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/durationText"
-            android:textSize="16sp"
+            android:textSize="15sp"
             android:translationX="150dp"
             android:translationY="130dp" />
 
@@ -45,7 +45,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/titleText"
-            android:textSize="20sp"
+            android:textSize="19sp"
             android:textStyle="bold"
             android:translationX="150dp"
             android:translationY="25dp" />
@@ -55,16 +55,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/channelText"
-            android:textSize="20sp"
+            android:textSize="17sp"
             android:translationX="150dp"
-            android:translationY="60dp" />
+            android:translationY="65dp" />
 
         <TextView
             android:id="@+id/videoViewsID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/viewText"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:translationX="150dp"
             android:translationY="95dp" />
 
@@ -73,8 +73,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/uploadedText"
-            android:textSize="20sp"
-            android:translationX="220dp"
+            android:textSize="15sp"
+            android:translationX="240dp"
             android:translationY="95dp" />
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         Prefs prefs = new Prefs(MainActivity.this);
         String search = prefs.getSearch();
         videoList=getVideos(search);
+        Log.d("video","List "+videoList);
         videoRecyclerViewAdapter=new VideoRecyclerViewAdapter(this,videoList);
         recyclerView.setAdapter(videoRecyclerViewAdapter);
         videoRecyclerViewAdapter.notifyDataSetChanged();
@@ -63,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     JSONArray videoArray=response.getJSONArray("items");
                     Log.d("videoresult","vid"+ videoArray);
-                    for (int i = 0; i < videoArray.length(); i++)
+                    for (int i = 0; i < /*videoArray.length()*/5; i++)
                     {
                         JSONObject videoObj=videoArray.getJSONObject(i);
                         Log.d("video","vid"+ videoObj.toString());
@@ -72,8 +73,8 @@ public class MainActivity extends AppCompatActivity {
                         JSONObject thumbnailObj = videoObj.getJSONObject("bestThumbnail");
                         //same with author
                         JSONObject authorObj = videoObj.getJSONObject("author");
-                        //if (videoObj.getString("type").equals("video"))
-                        //{
+                        if (videoObj.getString("type").equals("video"))
+                        {
                             Video video = new Video();
                             Log.d("videoTitle","vid"+ videoObj.getString("title"));
                             video.setTitle(videoObj.getString("title"));
@@ -88,13 +89,15 @@ public class MainActivity extends AppCompatActivity {
 
                             Log.d("videoThumbnail","vid"+ thumbnailObj.getString("url"));
                             video.setThumbnail(thumbnailObj.getString("url"));
-                            Log.d("videoThumbnail","vid"+ authorObj.getString("name"));
+                            Log.d("videoAuthor","vid"+ authorObj.getString("name"));
                             video.setAuthor(authorObj.getString("name"));
+                            Log.d("videoAuthor","hey"+video.getAuthor());
 
                             videoList.add(video);
                             Log.d("videoArray","vid"+ videoList.toString());
-                        //}
+                        }
                     }
+                    Log.d("videoList","list before2" + videoList);//this code is never reached
                     videoRecyclerViewAdapter.notifyDataSetChanged();
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -116,6 +119,7 @@ public class MainActivity extends AppCompatActivity {
                    return params;
             }*/
         };
+        Log.d("videoList","list before" + videoList);
         requestQueue.add(jsonObjectRequest);
         return videoList;
     }

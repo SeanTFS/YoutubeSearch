@@ -1,6 +1,7 @@
 package com.schen.youtubesearch.Data;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +24,7 @@ public class VideoRecyclerViewAdapter extends RecyclerView.Adapter<VideoRecycler
     public VideoRecyclerViewAdapter(Context context, List<Video> video){
         this.context=context;
         videoList=video;
+        Log.d("videoListAdapt","list adapt"+videoList);
     }
 
     @NonNull
@@ -35,6 +37,7 @@ public class VideoRecyclerViewAdapter extends RecyclerView.Adapter<VideoRecycler
     @Override
     public void onBindViewHolder(@NonNull VideoRecyclerViewAdapter.ViewHolder holder, int position)
     {
+        Log.d("video","hi");
         Video video = videoList.get(position);
         holder.title.setText(video.getTitle());
         String thumbnailLink = video.getThumbnail();
