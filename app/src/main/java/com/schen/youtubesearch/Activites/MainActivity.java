@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
             public boolean onQueryTextSubmit(String query) {
                 String search = query;
                 videoList=getVideos(search);
-                videoRecyclerViewAdapter=new VideoRecyclerViewAdapter(null,videoList);
+                videoRecyclerViewAdapter=new VideoRecyclerViewAdapter(null, videoList); //if we put the context as "this", it returns an error
                 recyclerView.setAdapter(videoRecyclerViewAdapter);
                 videoRecyclerViewAdapter.notifyDataSetChanged();
                 return true;
