@@ -1,11 +1,14 @@
 package com.schen.youtubesearch.Activites;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.RequestQueue;
@@ -51,6 +54,31 @@ public class MainActivity extends AppCompatActivity {
         videoRecyclerViewAdapter=new VideoRecyclerViewAdapter(this,videoList);
         recyclerView.setAdapter(videoRecyclerViewAdapter);
         videoRecyclerViewAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.recherche, menu);
+        MenuItem menuItem = menu.findItem(R.id.action_search);
+        SearchView searchView = (SearchView)menuItem.getActionView();
+        searchView.setQueryHint("Enter a topic to search for");
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                String search = query;
+                videoList=getVideos(search);
+                videoRecyclerViewAdapter=new VideoRecyclerViewAdapter(null,videoList);
+                recyclerView.setAdapter(videoRecyclerViewAdapter);
+                videoRecyclerViewAdapter.notifyDataSetChanged();
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+        });
+        return super.onCreateOptionsMenu(menu);
     }
 
     public List<Video> getVideos(String searchTerm)

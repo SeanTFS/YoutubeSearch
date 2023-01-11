@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activites.DetailsActivity">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="404dp"
+        android:layout_height="205dp"
+        android:layout_marginBottom="300dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="12dp">
+
+            <ImageView
+                android:id="@+id/videoThumbnailID_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/thumnailDes"
+                android:translationX="10dp"
+                android:translationY="25dp"
+                tools:ignore="ImageContrastCheck"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/videoDurationID_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/durationText"
+                android:textSize="15sp"
+                android:translationX="150dp"
+                android:translationY="130dp" />
+
+            <TextView
+                android:id="@+id/videoDescriptionID_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/descriptionText"
+                android:textSize="16sp"
+                android:translationX="30dp"
+                android:translationY="150dp" />
+
+            <TextView
+                android:id="@+id/videoTitleID_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/titleText"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:translationX="150dp"
+                android:translationY="20dp" />
+
+            <TextView
+                android:id="@+id/videoChannelID_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/channelText"
+                android:textSize="17sp"
+                android:translationX="150dp"
+                android:translationY="65dp" />
+
+            <TextView
+                android:id="@+id/videoViewsID_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/viewText"
+                android:textSize="15sp"
+                android:translationX="150dp"
+                android:translationY="95dp" />
+
+            <TextView
+                android:id="@+id/videoUploadedAtID_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/uploadedText"
+                android:textSize="15sp"
+                android:translationX="240dp"
+                android:translationY="95dp" />
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

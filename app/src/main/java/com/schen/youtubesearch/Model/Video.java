@@ -1,6 +1,8 @@
 package com.schen.youtubesearch.Model;
 
-public class Video
+import java.io.Serializable;
+
+public class Video implements Serializable
 {
     private String title;
     private String author;

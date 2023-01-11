@@ -13,7 +13,7 @@
         android:padding="12dp">
 
         <ImageView
-            android:id="@+id/videoThumbnailID"
+            android:id="@+id/videoThumbnailID_details"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/thumnailDes"
@@ -23,7 +23,7 @@
             tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
-            android:id="@+id/videoDurationID"
+            android:id="@+id/videoDurationID_details"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/durationText"
@@ -32,7 +32,7 @@
             android:translationY="130dp" />
 
         <TextView
-            android:id="@+id/videoDescriptionID"
+            android:id="@+id/videoDescriptionID_details"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/descriptionText"
@@ -41,17 +41,17 @@
             android:translationY="150dp" />
 
         <TextView
-            android:id="@+id/videoTitleID"
+            android:id="@+id/videoTitleID_details"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/titleText"
-            android:textSize="19sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             android:translationX="150dp"
-            android:translationY="25dp" />
+            android:translationY="20dp" />
 
         <TextView
-            android:id="@+id/videoChannelID"
+            android:id="@+id/videoChannelID_details"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/channelText"
@@ -60,7 +60,7 @@
             android:translationY="65dp" />
 
         <TextView
-            android:id="@+id/videoViewsID"
+            android:id="@+id/videoViewsID_details"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/viewText"
@@ -69,7 +69,7 @@
             android:translationY="95dp" />
 
         <TextView
-            android:id="@+id/videoUploadedAtID"
+            android:id="@+id/videoUploadedAtID_details"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/uploadedText"
