@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         JsonObjectRequest jsonObjectRequest=new JsonObjectRequest(myUrl, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response)
-            {
+            {//
                 try {
                     JSONArray videoArray=response.getJSONArray("items");
                     Log.d("videoresult","vid"+ videoArray);
